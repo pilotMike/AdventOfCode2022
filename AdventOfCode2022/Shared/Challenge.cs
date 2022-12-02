@@ -1,8 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿
 
-[assembly: InternalsVisibleTo("AdventOfCodeTests")]
-
-namespace AdventOfCode2022;
+namespace AdventOfCode2022.Shared;
 
 internal abstract class Challenge<T>
 {
