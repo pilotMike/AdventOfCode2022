@@ -1,5 +1,10 @@
-﻿namespace AdventOfCode2022.Shared;
+﻿
 
+using AdventOfCode2022.Shared.Tools;
+
+namespace AdventOfCode2022.Shared;
+
+internal delegate T SpanParseDelegate<T>(SpanLineEnumerable enumerator);
 internal class Input
 {
     private readonly string lines;
@@ -9,9 +14,10 @@ internal class Input
         this.lines = lines;
     }
 
-    public T ParseLines<T>(Func<IEnumerable<string>, T> selector)
+    public T ParseLines<T>(SpanParseDelegate<T> selector)
     {
-        return selector(lines.Split(Environment.NewLine));
+        var enu = new SpanLineEnumerable(lines);
+        return selector(enu);
 
     }
 }

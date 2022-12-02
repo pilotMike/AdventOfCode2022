@@ -10,7 +10,7 @@
         }
         public void Dispose()
         {
-            _totalMemory= GC.GetTotalMemory(false);
+            _totalMemory = GC.GetTotalMemory(false) - _totalMemory;
             Console.WriteLine("Total Memory Used: {0} bytes", _totalMemory.ToString("#,###"));
         }
     }
