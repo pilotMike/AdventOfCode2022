@@ -1,10 +1,8 @@
-﻿
-
-using AdventOfCode2022.Shared.Tools;
+﻿using AdventOfCode2022.Shared.Tools;
 
 namespace AdventOfCode2022.Shared;
 
-internal delegate T SpanParseDelegate<T>(SpanLineEnumerable enumerator);
+internal delegate T SpanParseDelegate<T>(SpanLineEnumerable lines);
 internal class Input
 {
     private readonly string lines;
