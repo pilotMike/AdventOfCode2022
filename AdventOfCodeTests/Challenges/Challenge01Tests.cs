@@ -1,15 +1,9 @@
-﻿using AdventOfCode2022;
-using AdventOfCode2022.Challenges.Challenge01;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using AdventOfCode2022.Challenges.Challenge01;
+using AdventOfCode2022.Shared;
 
 namespace AdventOfCodeTests.Challenges
 {
-    
+
     public class Challenge01Tests
     {
         [Fact]

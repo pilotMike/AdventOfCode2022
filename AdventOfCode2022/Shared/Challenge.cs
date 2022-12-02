@@ -1,11 +1,9 @@
-﻿
+﻿namespace AdventOfCode2022.Shared;
 
-namespace AdventOfCode2022.Shared;
-
-internal abstract class Challenge<T>
+internal interface IChallenge<T>
 {
-    public abstract string Description { get; }
+    string Description { get; }
 
-    public abstract T Execute(Input input);
+    T Execute(Input input);
 
 }
