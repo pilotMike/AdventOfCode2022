@@ -32,7 +32,7 @@ namespace AdventOfCodeTests.Challenges
             var challenge = new Part1();
             var result = challenge.Execute(input);
 
-            Assert.Equal(24000, result);
+            Assert.Equal(new Calories(24000), result);
         }
     }
 }

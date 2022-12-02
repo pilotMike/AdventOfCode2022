@@ -2,7 +2,7 @@
 
 namespace AdventOfCode2022.Challenges.Challenge01
 {
-    internal class Part1 : Challenge<int>
+    internal class Part1 : Challenge<Calories>
     {
         public override string Description { get; } = @"The jungle must be too overgrown and difficult to navigate in vehicles or access from the air; the Elves' expedition traditionally goes on foot. 
 As your boats approach land, the Elves begin taking inventory of their supplies. 
@@ -16,6 +16,6 @@ In the example above, this is 24000 (carried by the fourth Elf).
 
 Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?";
 
-        public override int Execute(Input input) => Parser.ParseEachElvesCalories(input).Max();
+        public override Calories Execute(Input input) => Parser.ParseEachElvesCalories(input).Max();
     }
 }
