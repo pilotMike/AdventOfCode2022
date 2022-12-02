@@ -1,25 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("AdventOfCodeTests")]
 
-namespace AdventOfCode2022
+namespace AdventOfCode2022;
+
+internal abstract class Challenge<T>
 {
-    internal abstract class Challenge
-    {
-        public abstract Input DefaultInput { get; set; }
+    public abstract string Description { get; }
 
+    public abstract T Execute(Input input);
 
-        public string Execute(Input? input)
-        {
-            return this.ExecuteInternal(input ?? DefaultInput);
-        }
-
-        protected abstract string ExecuteInternal(Input input);
-    }
 }

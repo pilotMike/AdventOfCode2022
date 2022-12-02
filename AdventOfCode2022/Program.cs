@@ -1,4 +1,3 @@
-﻿
+﻿using AdventOfCode2022.Challenges.Challenge01;
 
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+Console.WriteLine(new Part2().Execute(new DefaultInput()));

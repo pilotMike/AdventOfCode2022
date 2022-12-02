@@ -14,5 +14,11 @@ namespace AdventOfCode2022
         {
             this.lines = lines;
         }
+
+        public T ParseLines<T>(Func<IEnumerable<string>, T> selector)
+        {
+            return selector(this.lines.Split(Environment.NewLine)); 
+
+        }
     }
 }
