@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode2022.Challenges.Challenge02
-{
-    internal class DefaultInput : Input
-    {
-        public DefaultInput() : base(Value)
-        {
-        }
+namespace AdventOfCode2022.Challenges.Challenge02;
 
-        const string Value = @"A Y
+internal class DefaultInput : Input
+{
+    public DefaultInput() : base(Value)
+    {
+    }
+
+    const string Value = @"A Y
 B X
 B X
 C Y
@@ -2512,5 +2512,4 @@ C Y
 C Y
 B X
 B X";
-    }
 }

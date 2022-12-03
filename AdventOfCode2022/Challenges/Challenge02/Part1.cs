@@ -1,10 +1,10 @@
 ﻿using static AdventOfCode2022.Challenges.Challenge02.Hand;
 
-namespace AdventOfCode2022.Challenges.Challenge02
+namespace AdventOfCode2022.Challenges.Challenge02;
+
+internal sealed class Part1 : IChallenge<Points>
 {
-    internal sealed class Part1 : IChallenge<Points>
-    {
-        public string Description { get; } = @"Rock, Paper, Scissors:
+    public string Description { get; } = @"Rock, Paper, Scissors:
 For example, suppose you were given the following strategy guide:
 
 A Y
@@ -19,30 +19,29 @@ In this example, if you were to follow the strategy guide, you would get a total
 
 What would your total score be if everything goes exactly according to your strategy guide?";
 
-        
+    
 
-        public Points Execute(Input input)
+    public Points Execute(Input input)
+    {
+        static Hand opponentMap(char c) => c switch
         {
-            static Hand opponentMap(char c) => c switch
-            {
-                'A' => Rock,
-                'B' => Paper,
-                'C' => Scissors
-            };
-            static Hand ourSideMap(char c) => c switch
-            {
-                'Y' => Paper,
-                'X' => Rock,
-                'Z' => Scissors
-            };
+            'A' => Rock,
+            'B' => Paper,
+            'C' => Scissors
+        };
+        static Hand ourSideMap(char c) => c switch
+        {
+            'Y' => Paper,
+            'X' => Rock,
+            'Z' => Scissors
+        };
 
-            return input.ParseLines((ref ReadOnlySpan<char> line) =>
-            {
-                var them = opponentMap(line[0]);
-                var us = ourSideMap(line[2]);
-                var outcome = us.Compare(them);
-                return new Points(outcome) + us.Points;
-            }).Sum();
-        }
+        return input.ParseLines((ref ReadOnlySpan<char> line) =>
+        {
+            var them = opponentMap(line[0]);
+            var us = ourSideMap(line[2]);
+            var outcome = us.Compare(them);
+            return new Points(outcome) + us.Points;
+        }).Sum();
     }
 }
