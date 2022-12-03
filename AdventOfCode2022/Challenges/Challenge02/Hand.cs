@@ -8,7 +8,7 @@ namespace AdventOfCode2022.Challenges.Challenge02
         public static Hand Paper { get; } = new PaperHand();
         public static Hand Scissors { get; } = new ScissorsHand();
 
-        public static Hand[] AllHands { get; } = { new RockHand(), new PaperHand(), new ScissorsHand() };
+        public static Hand[] AllHands { get; } = { Rock, Paper, Scissors };
 
 
         public Points Points { get; }
