@@ -24,12 +24,18 @@ Y means you need to end the round in a draw, and Z means you need to win. Good l
             'Z' => Win
         };
 
-        return input.ParseLines((ref ReadOnlySpan<char> line) =>
+        return input.ParseLines(static (ref ReadOnlySpan<char> line) =>
         {
+            // before (using LINQ .First()): 336,312 bytes
+            // after: 24,912 bytes
             var them = opponentMap(line[0]);
             var outcome = desiredOutcome(line[2]);
-            var ours = Hand.AllHands.First(h => h.Compare(them) == outcome);
-            
+            Hand ours = them; // satisfy the compiler
+            // do an equivalent of .First assuming there will be a match to avoid a closure
+            foreach (var h in AllHands)
+                if (h.Compare(them) == outcome)
+                    ours = h;
+
             return new Points(outcome) + ours.Points;
         }).Sum();
     }
