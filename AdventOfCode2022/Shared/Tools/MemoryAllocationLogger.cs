@@ -1,17 +1,21 @@
 ﻿namespace AdventOfCode2022.Shared.Tools
 {
-    internal class MemoryAllocationLogger : IDisposable
+    internal sealed class MemoryAllocationLogger : IDisposable
     {
-        private long _totalMemory;
+        private readonly long _totalMemory;
 
-        public MemoryAllocationLogger() 
+        public MemoryAllocationLogger()
         {
-            _totalMemory = GC.GetTotalMemory(true);    
+            _totalMemory = GC.GetTotalMemory(true);
+            Console.WriteLine("Current Memory Usage: {0} bytes", _totalMemory.ToString("#,###"));
         }
+
         public void Dispose()
         {
-            _totalMemory = GC.GetTotalMemory(false) - _totalMemory;
-            Console.WriteLine("Total Memory Used: {0} bytes", _totalMemory.ToString("#,###"));
+            var final = GC.GetTotalMemory(false);
+            var used = final - _totalMemory;
+            Console.WriteLine("Final Memory Usage: {0} bytes", final.ToString("#,###"));
+            Console.WriteLine("Total Memory Used: {0} bytes", used.ToString("#,###"));
         }
     }
 }
