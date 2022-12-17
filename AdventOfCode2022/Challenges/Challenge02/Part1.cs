@@ -1,4 +1,5 @@
-﻿using static AdventOfCode2022.Challenges.Challenge02.Hand;
+﻿using AdventOfCode2022.Shared.Inputs;
+using static AdventOfCode2022.Challenges.Challenge02.Hand;
 
 namespace AdventOfCode2022.Challenges.Challenge02;
 
@@ -21,7 +22,7 @@ What would your total score be if everything goes exactly according to your stra
 
     
 
-    public Points Execute(Input input)
+    public Points Execute(TextInput input)
     {
         static Hand opponentMap(char c) => c switch
         {
@@ -36,7 +37,7 @@ What would your total score be if everything goes exactly according to your stra
             'Z' => Scissors
         };
 
-        return input.ParseLines((ref ReadOnlySpan<char> line) =>
+        return input.ParseLinesSpan((ref ReadOnlySpan<char> line) =>
         {
             var them = opponentMap(line[0]);
             var us = ourSideMap(line[2]);

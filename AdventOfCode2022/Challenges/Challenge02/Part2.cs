@@ -1,4 +1,5 @@
-﻿using static AdventOfCode2022.Challenges.Challenge02.Hand;
+﻿using AdventOfCode2022.Shared.Inputs;
+using static AdventOfCode2022.Challenges.Challenge02.Hand;
 using static AdventOfCode2022.Challenges.Challenge02.Outcome;
 
 namespace AdventOfCode2022.Challenges.Challenge02;
@@ -9,7 +10,7 @@ internal sealed class Part2 : IChallenge<Points>
 ""Anyway, the second column says how the round needs to end: X means you need to lose, 
 Y means you need to end the round in a draw, and Z means you need to win. Good luck!""";
 
-    public Points Execute(Input input)
+    public Points Execute(TextInput input)
     {
         static Hand opponentMap(char c) => c switch
         {
@@ -24,7 +25,7 @@ Y means you need to end the round in a draw, and Z means you need to win. Good l
             'Z' => Win
         };
 
-        return input.ParseLines(static (ref ReadOnlySpan<char> line) =>
+        return input.ParseLinesSpan(static (ref ReadOnlySpan<char> line) =>
         {
             // before (using LINQ .First()): 336,312 bytes
             // after: 24,912 bytes

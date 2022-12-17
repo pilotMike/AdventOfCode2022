@@ -1,9 +1,11 @@
-﻿namespace AdventOfCode2022.Shared;
+﻿using AdventOfCode2022.Shared.Inputs;
+
+namespace AdventOfCode2022.Shared;
 
 internal interface IChallenge<T>
 {
     string Description { get; }
 
-    T Execute(Input input);
+    T Execute(TextInput input);
 
 }

@@ -15,4 +15,12 @@ internal static class ParserExtensions
     /// Parses the subset of a string into an integer.
     /// </summary>
     public static int ParseInt(this (Range r, string t) source) => int.Parse(source.t.AsSpan()[source.r]);
+
+    public static IEnumerable<char> GetCharacters(this (Range r, string s) line)
+    {
+        for (int i = line.r.Start.Value; i < line.r.End.Value; i++)
+        {
+            yield return line.s[i];
+        }
+    }
 }

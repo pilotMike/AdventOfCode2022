@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode2022.Challenges.Challenge01;
+﻿using AdventOfCode2022.Shared.Inputs;
+
+namespace AdventOfCode2022.Challenges.Challenge01;
 
 internal class Part2 : IChallenge<Calories>
 {
@@ -8,5 +10,5 @@ internal class Part2 : IChallenge<Calories>
 To avoid this unacceptable situation, the Elves would instead like to know the total Calories carried by the top three Elves carrying the most Calories. 
 That way, even if one of those Elves runs out of snacks, they still have two backups.";
 
-    public Calories Execute(Input input) => Parser.ParseEachElvesCalories(input).OrderDescending().Take(3).Sum();
+    public Calories Execute(TextInput input) => Parser.ParseEachElvesCalories(input).OrderDescending().Take(3).Sum();
 }

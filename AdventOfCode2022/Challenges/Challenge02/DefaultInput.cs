@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdventOfCode2022.Shared.Inputs;
 
 namespace AdventOfCode2022.Challenges.Challenge02;
 
-internal class DefaultInput : Input
+internal class DefaultInput : TextInput
 {
     public DefaultInput() : base(Value)
     {

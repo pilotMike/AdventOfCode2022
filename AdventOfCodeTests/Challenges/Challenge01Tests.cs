@@ -1,5 +1,6 @@
 ﻿using AdventOfCode2022.Challenges.Challenge01;
 using AdventOfCode2022.Shared;
+using AdventOfCode2022.Shared.Inputs;
 
 namespace AdventOfCodeTests.Challenges;
 
@@ -9,7 +10,7 @@ public class Challenge01Tests
     [Fact]
     public void Part01_WithSamepleInput_Returns_24000_ForTotalCalories()
     {
-        var input = new Input(@"1000
+        var input = new TextInput(@"1000
 2000
 3000
 

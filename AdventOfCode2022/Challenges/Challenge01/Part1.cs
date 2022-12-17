@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode2022.Challenges.Challenge01;
+﻿using AdventOfCode2022.Shared.Inputs;
+
+namespace AdventOfCode2022.Challenges.Challenge01;
 
 internal class Part1 : IChallenge<Calories>
 {
@@ -14,5 +16,5 @@ In the example above, this is 24000 (carried by the fourth Elf).
 
 Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?";
 
-    public Calories Execute(Input input) => Parser.ParseEachElvesCalories(input).Max();
+    public Calories Execute(TextInput input) => Parser.ParseEachElvesCalories(input).Max();
 }

@@ -1,6 +1,8 @@
-﻿namespace AdventOfCode2022.Challenges.Challenge01;
+﻿using AdventOfCode2022.Shared.Inputs;
 
-internal class DefaultInput : Input
+namespace AdventOfCode2022.Challenges.Challenge01;
+
+internal class DefaultInput : TextInput
 {
     public DefaultInput() : base(Value)
     {
