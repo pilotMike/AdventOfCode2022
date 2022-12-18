@@ -13,6 +13,8 @@ internal class TextInput : Input
         this.lines = lines;
     }
 
+    public override IEnumerable<char> Characters => lines;
+
     public T ParseLinesEnumerable<T>(SpanParseDelegate<T> selector)
     {
         var enu = new SpanLineEnumerable(lines);

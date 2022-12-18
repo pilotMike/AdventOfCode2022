@@ -1,6 +1,5 @@
-﻿using AdventOfCode2022.Challenges.Challenge05;
+﻿using AdventOfCode2022.Challenges.Challenge06;
 using AdventOfCode2022.Shared.Tools;
-using System.Diagnostics;
 
 // pre-initialize for memory tracking and warm-up. It's not a good warmup, but it helps with me getting an idea of the memory usage
 var challenge = new Part2();
